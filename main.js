@@ -6,8 +6,8 @@ const logger = new Logger("./logs/", "log", ".txt");
 const Server = require("./lib/server.js");
 const server = new Server("localhost", 5000);
 
-server.setRoute("post", "/",
-	(request, reponse) => {
+server.route("post", "/",
+	(request, response) => {
 		let body = request.body;
 		logger.in("Requesting / body: ", body);
 
