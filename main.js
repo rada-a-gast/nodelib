@@ -9,7 +9,7 @@ const server = new Server("localhost", 5000);
 server.route("post", "/",
 	(request, response) => {
 		let body = request.body;
-		logger.in("Requesting / body: ", body);
+		logger.in("Requesting / body", body);
 
 		return response.sendStatus(200);
 	}
