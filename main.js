@@ -1,23 +1,15 @@
-const promise = require("./lib/promise.js");
+const Storage = require("./lib/storage.js");
+const storage = new Storage();
 
-const Logger = require("./lib/logger.js");
-const logger = new Logger("./logs/", "log", ".txt");
+storage.set("name", "billy");
 
-const Server = require("./lib/server.js");
-const server = new Server("localhost", 5000);
+let name = storage.get("name");
+console.log(name);
 
-server.route("post", "/",
-	(request, response) => {
-		let body = request.body;
-		logger.in("Requesting / body", body);
+name = storage.set("name", null);
+console.log(name);
 
-		return response.sendStatus(200);
-	}
-);
+console.log(storage.data());
 
-server.run(
-	(host, port) => {
-		return logger.info("Server is running on " + host + ":" + port);
-	}
-);
-
+storage.clear();
+console.log(storage.data());
