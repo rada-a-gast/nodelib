@@ -1,7 +1,8 @@
 # nodelib
-it's raining *o*
+it's raining 'o'
 
 ## logger
+```nodejs
 	const Logger = require("./lib/logger.js");
 	const logger = new Logger("path", "filename", ".fileextension");
 
@@ -13,8 +14,10 @@ it's raining *o*
 	logger.error("wow");
 	logger.fail("wow");
 	logger.success("wow");
+```
 
 ## server
+```nodejs
 	const Server = require("./lib/server.js");
 	const server = new Server("host", "port");
 
@@ -32,9 +35,10 @@ it's raining *o*
 			return logger.info("Server is running on " + host + ":" + port);
 		}
 	);
+```
 
 ## promise
-
+```nodejs
 	const promise = require("./lib/promise.js");
 
 	const object = {
@@ -55,8 +59,10 @@ it's raining *o*
 	}
 
 	main();
+```
 
 ## storage
+```nodejs
 	const Storage = require("./lib/storage.js");
 	const storage = new Storage();
 
@@ -72,3 +78,4 @@ it's raining *o*
 
 	storage.clear();
 	console.log(storage.data());
+	```
