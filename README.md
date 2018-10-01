@@ -2,7 +2,7 @@
 it's raining 'o'
 
 ## logger
-```nodejs
+```javascript
 	const Logger = require("./lib/logger.js");
 	const logger = new Logger("path", "filename", ".fileextension");
 
@@ -17,7 +17,7 @@ it's raining 'o'
 ```
 
 ## server
-```nodejs
+```javascript
 	const Server = require("./lib/server.js");
 	const server = new Server("host", "port");
 
@@ -38,7 +38,7 @@ it's raining 'o'
 ```
 
 ## promise
-```nodejs
+```javascript
 	const promise = require("./lib/promise.js");
 
 	const object = {
@@ -62,7 +62,7 @@ it's raining 'o'
 ```
 
 ## storage
-```nodejs
+```javascript
 	const Storage = require("./lib/storage.js");
 	const storage = new Storage();
 
