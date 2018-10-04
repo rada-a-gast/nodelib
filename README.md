@@ -87,3 +87,39 @@ storage.clear();
 console.log(storage.data());
 
 ```
+
+## rabbit
+```javascript
+
+const Rabbit = require("./lib/rabbit.js");
+const rabbit = new Rabbit();
+
+async function main() {
+	let response;
+
+	// connect to amqp
+	response = await rabbit.connect("amqp_url");
+	if (response.error) return console.log(response.error);
+
+	// start consuming
+	response = await rabbit.consume("consume_queue"
+		(error, result) => {
+			return result; // result == "message"
+		}
+	);
+	if (response.error) return console.log(response.error);
+
+	// publish payload
+	const payload = {
+		name : "billy",
+		age : 10
+	};
+
+	response = await rabbit.send("publish_queue", payload);
+	if (response.error) return console.log(response.error);
+
+	return;
+}
+
+main();
+```

@@ -1,15 +1,16 @@
-const Storage = require("./lib/storage.js");
-const storage = new Storage();
+const Database = require("./lib/database.js");
+const database = new Database("FDPSVR117", "flexbot", "iopeople2018", "flexbotsdb");
 
-storage.set("name", "billy");
+let k = database.set(
+	"testing",
+	{
+		id : 1,
+		name : "retardado",
+		value : 10
+	},
+	(e, r) => {
+		console.log(e, r)
+	}
+);
 
-let name = storage.get("name");
-console.log(name);
-
-name = storage.set("name", null);
-console.log(name);
-
-console.log(storage.data());
-
-storage.clear();
-console.log(storage.data());
+console.log(k)
