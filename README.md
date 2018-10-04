@@ -115,7 +115,7 @@ async function main() {
 		age : 10
 	};
 
-	response = await rabbit.send("publish_queue", payload);
+	response = await rabbit.publish("publish_queue", payload);
 	if (response.error) return console.log(response.error);
 
 	return;
